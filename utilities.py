@@ -10,7 +10,6 @@ HIFIGAN_16K_64 = {
     "resblock": "1",
     "num_gpus": 6,
     "batch_size": 16,
-    "learning_rate": 0.0002,
     "adam_b1": 0.8,
     "adam_b2": 0.99,
     "lr_decay": 0.999,
@@ -40,7 +39,6 @@ HIFIGAN_16K_64 = {
 
 
 def get_available_checkpoint_keys(model, ckpt):
-    print("==> Attemp to reload from %s" % ckpt)
     state_dict = torch.load(ckpt)["state_dict"]
     current_state_dict = model.state_dict()
     new_state_dict = {}
